@@ -9,21 +9,16 @@
 </head>
 <body>
     <header>
-      <div>
-        <nav class="navbar navbar-expand-sm bg-secondary text-white">
-          <div class="container-fluid">
-              <nav class="navbar bg-secondary text-white">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
                   <div class="container-fluid">
                     <a class="navbar-brand" href="#">
-                      <img src="imagenes/codoacodo.png" alt="Logo"  class="d-inline-block align-text-top" style="width: auto">
+                      <img src="imagenes/codoacodo.png" alt="Logo" class="d-inline-block align-text-top" style="width: auto">
                       Conf Bs As
                     </a>
-                  </div>
-                </nav>
-  
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
@@ -41,14 +36,15 @@
                 <li class="nav-item">
                   <a class="nav-link" href="tickets.html" style="color:rgb(65, 190, 65)">Comprar tickets</a>
                 </li>
+                <li><a href="vistas/login.jsp"><span class="ticket">Login</span></a></li>
                   </ul>
             </div>
-        </nav>
-      </div>  
+          </div>  
+        </nav> 
     </header>
 
-    <main class="container-fluid" style="max-width: 100%;">
-        <div id="carouselExample" class="carousel slide" >
+    <main class="container-fluid">
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner" >
               <div class="carousel-item active">
                 <img src="imagenes/ba1.jpg" class="d-block w-100" alt="...">
@@ -60,6 +56,7 @@
                 <img src="imagenes/ba3.jpg" class="d-block w-100" alt="...">
               </div>
             </div>
+
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Previous</span>
@@ -69,7 +66,8 @@
               <span class="visually-hidden">Next</span>
             </button>
           </div>
-          <div class="info">
+
+          <div class="info text-center bg-dark text-white p-4 my-4">
             <h1>Conf Bs As</h1>
             <p>
               Bs As llega por primera vez a Argentina. Un evento para compartir con nuestra comunidad el conocimiento y experiencia de los expertos que están creando el futuro de Internet. Ven a conocer a miembros del evento, a otros estudiantes de Codo a Codo y los oradores de primer nivel que tenemos para ti. Te esperamos!
@@ -77,13 +75,14 @@
             <button type="button" class="btn btn-outline-light">Quiero ser orador</button>
             <button type="button" class="btn btn-success">Comprar tickets</button>
           </div>
-
     </main>
 
-    <h2 class="first-text">CONOCE A LOS</h2>
-    <h1 class="second-text">ORADORES</h1>
-
+    <section>
+      <h2 class="first-text">CONOCE A LOS</h2>
+      <h1 class="second-text">ORADORES</h1>
+      
     <div class="row row-cols-1 row-cols-md-3 g-4">
+    
       <div class="col">
         <div class="card h-100">
           <img src="imagenes/steve.jpg" class="card-img-top" alt="...">
@@ -139,6 +138,17 @@
       </div>
     </div>
 
+    </section>
+
+    <div>
+      <a href="vistas/verOradores.jsp"
+        style="background-color: green; color:white; padding: 10px 20px; text-decoration: none; border: none; cursor: pointer; margin: 10px 400px;" >
+        Ver otros oradores
+      </a>
+    </div>
+    
+
+
     <div class="card mb-3" style="max-width: 100%;">
       <div class="row g-0">
         <div class="col-md-6">
@@ -154,36 +164,28 @@
       </div>
     </div>
 
+    //FORMULARIO//
+    <section class="my-4">
+      <div class="container">
     <h2 class="first-text">CONVIÉRTETE EN UN</h2>
     <h1 class="second-text">ORADOR</h1>
     <p class="text-center">Anótate como orador para dar una charla ignite. Cuéntanos de qué quieres hablar!</p>
+    
+  
+    
 
-
-    <div class="mb-3">
-      <div class="form-text">
-       <div class="nom-input">
-        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre">
-       </div> 
-      <div class="apel-input">
-        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Apellido">
+    <form action="registroOrador" method="post">
+      <div class="inputGroup">
+          <input type="text" name="nombre" id="nombre" placeholder="Nombre">
+          <input type="text" name="apellido" id="apellido" placeholder="Apellido">
       </div>
-      
-      </div>
-      
-    </div>
+      <textarea name="tema" id="tema" cols="30" rows="5" placeholder="Sobre qué quieres hablar?"></textarea>
+      <p class="info">Recuerda incluir un título para tu charla</p>
+      <input type="submit" id="btnEnviar" value="Enviar">
+  </form>
 
-    <div class="mb-3">
-      <div class="form-area">
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">Sobre qué quieres hablar?</textarea>
-      </div>
-      
-    </div>
 
-    <p class="record-text">Recuerda incluir un título para tu charla</p>
-
-    <div class="bot-send">
-      <button type="button" class="btn btn-success">Enviar</button>
-    </div>
+  </section>
 
     <footer>
       <ul class="foot-style">
